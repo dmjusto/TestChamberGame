@@ -1,0 +1,3 @@
+/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Source/TestChamber/TestChamber.Build.cs
+/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Source/TestChamber.Target.cs
+/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Source/TestChamberEditor.Target.cs

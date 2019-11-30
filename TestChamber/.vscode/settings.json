@@ -1,0 +1,7 @@
+{
+	"files.exclude": {
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/.vscode": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Content": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Intermediate": true
+	}
+}

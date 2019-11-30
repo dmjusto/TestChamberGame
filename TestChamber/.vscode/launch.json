@@ -1,0 +1,104 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "TestChamber (Debug)",
+			"request": "launch",
+			"preLaunchTask": "TestChamber Mac Debug Build",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Debug.app/Contents/MacOS/UE4-Mac-Debug",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamber (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "TestChamber Mac DebugGame Build",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-DebugGame.app/Contents/MacOS/UE4-Mac-DebugGame",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamber (Development)",
+			"request": "launch",
+			"preLaunchTask": "TestChamber Mac Development Build",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4.app/Contents/MacOS/UE4",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamber (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "TestChamber Mac Shipping Build",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Shipping.app/Contents/MacOS/UE4-Mac-Shipping",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamber (Test)",
+			"request": "launch",
+			"preLaunchTask": "TestChamber Mac Test Build",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Test.app/Contents/MacOS/UE4-Mac-Test",
+			"args": [
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamberEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "TestChamberEditor Mac Debug Build",
+			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor-Mac-Debug.app/Contents/MacOS/UE4Editor-Mac-Debug",
+			"args": [
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamberEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "TestChamberEditor Mac DebugGame Build",
+			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor-Mac-DebugGame.app/Contents/MacOS/UE4Editor-Mac-DebugGame",
+			"args": [
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "TestChamberEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "TestChamberEditor Mac Development Build",
+			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor.app/Contents/MacOS/UE4Editor",
+			"args": [
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+			],
+			"cwd": "/Users/Shared/Epic Games/UE_4.23",
+			"type": "lldb"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "mono",
+			"request": "launch",
+			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/DotNET/UnrealBuildTool.exe",
+			"console": "internalConsole",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "/Users/Shared/Epic Games/UE_4.23"
+		}
+	]
+}

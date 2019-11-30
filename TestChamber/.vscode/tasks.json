@@ -1,0 +1,995 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "TestChamber Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber Mac Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber Mac Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber Mac Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"Mac",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber IOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber IOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber IOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber IOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber IOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber IOS Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"IOS",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber HTML5 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber HTML5 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber HTML5 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber HTML5 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Shipping",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamber HTML5 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamber HTML5 Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamber",
+				"HTML5",
+				"Test",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamberEditor Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Debug",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamberEditor Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"DebugGame",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"TestChamberEditor Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "TestChamberEditor Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"TestChamberEditor",
+				"Mac",
+				"Development",
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		}
+	]
+}
