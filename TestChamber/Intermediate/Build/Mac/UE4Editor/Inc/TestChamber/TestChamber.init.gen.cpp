@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeTestChamber_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD97168CE,
+				0xBD9D57D5,
 				0xF251EF0D,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -61,11 +61,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATestChamberCharacter); \
 	FORCEINLINE static uint32 __PPO__Mesh1P() { return STRUCT_OFFSET(ATestChamberCharacter, Mesh1P); } \
 	FORCEINLINE static uint32 __PPO__FP_Gun() { return STRUCT_OFFSET(ATestChamberCharacter, FP_Gun); } \
 	FORCEINLINE static uint32 __PPO__FP_MuzzleLocation() { return STRUCT_OFFSET(ATestChamberCharacter, FP_MuzzleLocation); } \
-	FORCEINLINE static uint32 __PPO__VR_Gun() { return STRUCT_OFFSET(ATestChamberCharacter, VR_Gun); } \
-	FORCEINLINE static uint32 __PPO__VR_MuzzleLocation() { return STRUCT_OFFSET(ATestChamberCharacter, VR_MuzzleLocation); } \
-	FORCEINLINE static uint32 __PPO__FirstPersonCameraComponent() { return STRUCT_OFFSET(ATestChamberCharacter, FirstPersonCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__R_MotionController() { return STRUCT_OFFSET(ATestChamberCharacter, R_MotionController); } \
-	FORCEINLINE static uint32 __PPO__L_MotionController() { return STRUCT_OFFSET(ATestChamberCharacter, L_MotionController); }
+	FORCEINLINE static uint32 __PPO__FirstPersonCameraComponent() { return STRUCT_OFFSET(ATestChamberCharacter, FirstPersonCameraComponent); }
 
 
 #define TestChamber_Source_TestChamber_TestChamberCharacter_h_11_PROLOG

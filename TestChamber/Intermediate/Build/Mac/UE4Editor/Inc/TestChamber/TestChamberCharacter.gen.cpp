@@ -22,7 +22,6 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 	TESTCHAMBER_API UClass* Z_Construct_UClass_ATestChamberProjectile_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	HEADMOUNTEDDISPLAY_API UClass* Z_Construct_UClass_UMotionControllerComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
@@ -40,11 +39,6 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bUsingMotionControllers_MetaData[];
-#endif
-		static void NewProp_bUsingMotionControllers_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUsingMotionControllers;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireAnimation_MetaData[];
 #endif
@@ -70,25 +64,9 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_L_MotionController_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_L_MotionController;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_R_MotionController_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_R_MotionController;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FirstPersonCameraComponent_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FirstPersonCameraComponent;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VR_MuzzleLocation_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_VR_MuzzleLocation;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VR_Gun_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_VR_Gun;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FP_MuzzleLocation_MetaData[];
 #endif
@@ -116,19 +94,6 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 		{ "ModuleRelativePath", "TestChamberCharacter.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers_MetaData[] = {
-		{ "Category", "Gameplay" },
-		{ "Comment", "/** Whether to use motion controller location for aiming. */" },
-		{ "ModuleRelativePath", "TestChamberCharacter.h" },
-		{ "ToolTip", "Whether to use motion controller location for aiming." },
-	};
-#endif
-	void Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers_SetBit(void* Obj)
-	{
-		((ATestChamberCharacter*)Obj)->bUsingMotionControllers = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers = { "bUsingMotionControllers", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool , RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(uint8), sizeof(ATestChamberCharacter), &Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers_SetBit, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FireAnimation_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -184,28 +149,6 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_BaseTurnRate_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_BaseTurnRate_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_L_MotionController_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "TestChamberCharacter" },
-		{ "Comment", "/** Motion controller (left hand) */" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestChamberCharacter.h" },
-		{ "ToolTip", "Motion controller (left hand)" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_L_MotionController = { "L_MotionController", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, L_MotionController), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_L_MotionController_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_L_MotionController_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_R_MotionController_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "TestChamberCharacter" },
-		{ "Comment", "/** Motion controller (right hand) */" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestChamberCharacter.h" },
-		{ "ToolTip", "Motion controller (right hand)" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_R_MotionController = { "R_MotionController", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, R_MotionController), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_R_MotionController_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_R_MotionController_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FirstPersonCameraComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
@@ -216,26 +159,6 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FirstPersonCameraComponent = { "FirstPersonCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, FirstPersonCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FirstPersonCameraComponent_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FirstPersonCameraComponent_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_MuzzleLocation_MetaData[] = {
-		{ "Category", "Mesh" },
-		{ "Comment", "/** Location on VR gun mesh where projectiles should spawn. */" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestChamberCharacter.h" },
-		{ "ToolTip", "Location on VR gun mesh where projectiles should spawn." },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_MuzzleLocation = { "VR_MuzzleLocation", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, VR_MuzzleLocation), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_MuzzleLocation_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_MuzzleLocation_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_Gun_MetaData[] = {
-		{ "Category", "Mesh" },
-		{ "Comment", "/** Gun mesh: VR view (attached to the VR controller directly, no arm, just the actual gun) */" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestChamberCharacter.h" },
-		{ "ToolTip", "Gun mesh: VR view (attached to the VR controller directly, no arm, just the actual gun)" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_Gun = { "VR_Gun", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, VR_Gun), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_Gun_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_Gun_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FP_MuzzleLocation_MetaData[] = {
 		{ "Category", "Mesh" },
@@ -267,18 +190,13 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_Mesh1P = { "Mesh1P", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestChamberCharacter, Mesh1P), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_Mesh1P_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_Mesh1P_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATestChamberCharacter_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_bUsingMotionControllers,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_ProjectileClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_GunOffset,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_BaseTurnRate,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_L_MotionController,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_R_MotionController,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FirstPersonCameraComponent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_MuzzleLocation,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_VR_Gun,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FP_MuzzleLocation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_FP_Gun,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestChamberCharacter_Statics::NewProp_Mesh1P,
@@ -310,7 +228,7 @@ void EmptyLinkFunctionForGeneratedCodeTestChamberCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATestChamberCharacter, 195415302);
+	IMPLEMENT_CLASS(ATestChamberCharacter, 3480444718);
 	template<> TESTCHAMBER_API UClass* StaticClass<ATestChamberCharacter>()
 	{
 		return ATestChamberCharacter::StaticClass();
