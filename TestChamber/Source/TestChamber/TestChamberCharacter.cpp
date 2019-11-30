@@ -87,7 +87,8 @@ void ATestChamberCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ATestChamberCharacter::OnFire);
+	PlayerInputComponent->BindAction("FireBlue", IE_Pressed, this, &ATestChamberCharacter::OnFire);
+	PlayerInputComponent->BindAction("FireYellow",IE_Pressed, this, &ATestChamberCharacter::OnFire);
 
 	// Bind movement events
 	PlayerInputComponent->BindAxis("MoveForward", this, &ATestChamberCharacter::MoveForward);
