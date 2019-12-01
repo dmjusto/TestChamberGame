@@ -11,6 +11,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
+#include "DrawDebugHelpers.h"
+#include "GameEngine.generated.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -105,33 +107,30 @@ void ATestChamberCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 void ATestChamberCharacter::OnFire()
 {
-	// try and fire a projectile
-	// if (ProjectileClass != NULL)
-	// {
-	// 	UWorld* const World = GetWorld();
-	// 	if (World != NULL)
-	// 	{
-	// 		if (bUsingMotionControllers)
-	// 		{
-	// 			const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
-	// 			const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-	// 			World->SpawnActor<ATestChamberProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-	// 		}
-	// 		else
-	// 		{
-	// 			const FRotator SpawnRotation = GetControlRotation();
-	// 			// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-	// 			const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
+	//ray trace on fire
+	FHitResult OutHit;
+	FVector Start = FP_MuzzleLocation->GetComponentLocation();
+	FVector ForwardVec = FirstPersonCameraComponent->GetForwardVector();
+	FVector End = ((ForwardVec*10000.0f) + Start);
+	FCollisionQueryParams CollisionParams;
 
-	// 			//Set Spawn Collision Handling Override
-	// 			FActorSpawnParameters ActorSpawnParams;
-	// 			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+	DrawDebugLine(GetWorld(), Start, End, FColor::Magenta, true);
+	bool bHitSomething = GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams);
 
-	// 			// spawn the projectile at the muzzle
-	// 			World->SpawnActor<ATestChamberProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
-	// 		}
-	// 	}
-	// }
+	if (bHitSomething)
+	{
+		if (OutHit.bBlockingHit)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("You hit: %s"), *OutHit.GetActor()->GetName()));
+
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Impact Point: %s"), *OutHit.ImpactPoint.ToString()));
+
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Impact Normal: %s"), *OutHit.ImpactNormal.ToString()));
+
+		}
+		
+	}
+	
 
 	// try and play the sound if specified
 	if (FireSound != NULL)
