@@ -1,7 +1,11 @@
 {
 	"files.exclude": {
-		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/.vscode": true,
-		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Content": true,
-		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Intermediate": true
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/.idea": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/.vscode": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Content": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Intermediate": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Saved": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/TestChamber.xcworkspace": true,
+		"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/cmake-build-debug": true
 	}
 }

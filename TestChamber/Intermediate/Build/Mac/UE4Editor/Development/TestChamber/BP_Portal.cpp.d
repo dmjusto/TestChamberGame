@@ -2443,4 +2443,10 @@
   /Users/dylanfairbanks/Documents/Unreal\ Projects/TestChamberRepo/TestChamber/Source/TestChamber/BP_Portal.cpp \
   /Users/dylanfairbanks/Documents/Unreal\ Projects/TestChamberRepo/TestChamber/Intermediate/Build/Mac/UE4Editor/Development/TestChamber/Definitions.TestChamber.h \
   /Users/dylanfairbanks/Documents/Unreal\ Projects/TestChamberRepo/TestChamber/Source/TestChamber/BP_Portal.h \
-  /Users/dylanfairbanks/Documents/Unreal\ Projects/TestChamberRepo/TestChamber/Intermediate/Build/Mac/UE4Editor/Inc/TestChamber/BP_Portal.generated.h
+  /Users/dylanfairbanks/Documents/Unreal\ Projects/TestChamberRepo/TestChamber/Intermediate/Build/Mac/UE4Editor/Inc/TestChamber/BP_Portal.generated.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Public/DrawDebugHelpers.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Classes/Components/SceneCaptureComponent2D.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Classes/Components/SceneCaptureComponent.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/SceneCaptureComponent.generated.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/SceneCaptureComponent2D.generated.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/GameEngine.generated.h

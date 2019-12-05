@@ -5,7 +5,7 @@
 			"name": "TestChamber (Debug)",
 			"request": "launch",
 			"preLaunchTask": "TestChamber Mac Debug Build",
-			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Debug.app/Contents/MacOS/UE4-Mac-Debug",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Binaries/Mac/UE4-Mac-Debug.app/Contents/MacOS/UE4-Mac-Debug",
 			"args": [
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
@@ -15,7 +15,7 @@
 			"name": "TestChamber (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "TestChamber Mac DebugGame Build",
-			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-DebugGame.app/Contents/MacOS/UE4-Mac-DebugGame",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Binaries/Mac/UE4-Mac-DebugGame.app/Contents/MacOS/UE4-Mac-DebugGame",
 			"args": [
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
@@ -25,7 +25,7 @@
 			"name": "TestChamber (Development)",
 			"request": "launch",
 			"preLaunchTask": "TestChamber Mac Development Build",
-			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4.app/Contents/MacOS/UE4",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Binaries/Mac/UE4.app/Contents/MacOS/UE4",
 			"args": [
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
@@ -35,7 +35,7 @@
 			"name": "TestChamber (Shipping)",
 			"request": "launch",
 			"preLaunchTask": "TestChamber Mac Shipping Build",
-			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Shipping.app/Contents/MacOS/UE4-Mac-Shipping",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Binaries/Mac/UE4-Mac-Shipping.app/Contents/MacOS/UE4-Mac-Shipping",
 			"args": [
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
@@ -45,7 +45,7 @@
 			"name": "TestChamber (Test)",
 			"request": "launch",
 			"preLaunchTask": "TestChamber Mac Test Build",
-			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/Binaries/Mac/UE4-Mac-Test.app/Contents/MacOS/UE4-Mac-Test",
+			"program": "/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/Binaries/Mac/UE4-Mac-Test.app/Contents/MacOS/UE4-Mac-Test",
 			"args": [
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
@@ -57,7 +57,7 @@
 			"preLaunchTask": "TestChamberEditor Mac Debug Build",
 			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor-Mac-Debug.app/Contents/MacOS/UE4Editor-Mac-Debug",
 			"args": [
-				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/TestChamber.uproject"
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
 			"type": "lldb"
@@ -68,7 +68,7 @@
 			"preLaunchTask": "TestChamberEditor Mac DebugGame Build",
 			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor-Mac-DebugGame.app/Contents/MacOS/UE4Editor-Mac-DebugGame",
 			"args": [
-				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/TestChamber.uproject"
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
 			"type": "lldb"
@@ -79,7 +79,7 @@
 			"preLaunchTask": "TestChamberEditor Mac Development Build",
 			"program": "/Users/Shared/Epic Games/UE_4.23/Engine/Binaries/Mac/UE4Editor.app/Contents/MacOS/UE4Editor",
 			"args": [
-				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject"
+				"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/TestChamber.uproject"
 			],
 			"cwd": "/Users/Shared/Epic Games/UE_4.23",
 			"type": "lldb"
@@ -93,7 +93,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=\"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamber/TestChamber.uproject\"",
+				"-project=\"/Users/dylanfairbanks/Documents/Unreal Projects/TestChamberRepo/TestChamber/TestChamber.uproject\"",
 				"-game",
 				"-engine"
 			],
