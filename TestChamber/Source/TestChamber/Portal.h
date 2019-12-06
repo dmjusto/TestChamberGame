@@ -3,29 +3,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "Components/SceneCaptureComponent2D.h"
+#include "Components/SceneComponent.h"
 #include "Portal.generated.h"
 
-UCLASS()
-class TESTCHAMBER_API APortal : public AActor
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class TESTCHAMBER_API UPortal : public USceneComponent
 {
 	GENERATED_BODY()
-	
+
 public:	
-	// Sets default values for this actor's properties
-	APortal();
+	// Sets default values for this component's properties
+	UPortal();
 
 protected:
-	// Called when the game starts or when spawned
+	// Called when the game starts
 	virtual void BeginPlay() override;
 
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-    
-private:
-    UPROPERTY(VisibleAnywhere)
-    class 	USceneCaptureComponent2D* PortalCam;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+		
 };
