@@ -12,7 +12,10 @@
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
 #include "DrawDebugHelpers.h"
+#include "Engine/World.h"
 #include "GameEngine.generated.h"
+
+#define OUT
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -109,9 +112,14 @@ void ATestChamberCharacter::OnFire()
 {
 	//ray trace on fire
 	FHitResult OutHit;
-	FVector Start = FP_MuzzleLocation->GetComponentLocation();
-	FVector ForwardVec = FirstPersonCameraComponent->GetForwardVector();
-	FVector End = ((ForwardVec*10000.0f) + Start);
+	// FVector Start = FP_MuzzleLocation->GetComponentLocation();
+	FVector PlayerViewLocation;
+	FRotator PlayerViewRotation;
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerViewLocation,OUT PlayerViewRotation);
+	FVector Start = PlayerViewLocation;
+	// FVector ForwardVec = FirstPersonCameraComponent->GetForwardVector();
+	// FVector End = ((ForwardVec*10000.0f) + Start);
+	FVector End = Start + PlayerViewRotation.Vector() * 10000.0f;
 	FCollisionQueryParams CollisionParams;
 
 	DrawDebugLine(GetWorld(), Start, End, FColor::Magenta, true);

@@ -30,5 +30,6 @@ void UPortal::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponen
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+	//testing...
 }
 
