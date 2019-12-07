@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "TestChamberCharacter.generated.h"
 
 class UInputComponent;
@@ -60,10 +61,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	class UAnimMontage* FireAnimation;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Portal)
+	TSubclassOf<AActor> BluePortal_BP;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Portal)
+	TSubclassOf<AActor> YellowPortal_BP;
+
 protected:
 	
-	/** Fires a projectile. */
-	void OnFire();
+	/** Fires a Blue Portal. */
+	void OnFireBlue();
+
+	/** Fires a Yellow Portal. */
+	void OnFireYellow();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
@@ -93,6 +103,16 @@ public:
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+
+private:
+	void SpawnBluePortal(FVector position, FVector hitNormal);
+	void SpawnYellowPortal(FVector position, FVector hitNormal);
+
+	void FireGun();
+	void ShootPortal(bool BIsBluePortal);
+
+	AActor* BluePTL;
+	AActor* YellowPTL;
 
 };
 

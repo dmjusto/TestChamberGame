@@ -92,8 +92,8 @@ void ATestChamberCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	// Bind fire event
-	PlayerInputComponent->BindAction("FireBlue", IE_Pressed, this, &ATestChamberCharacter::OnFire);
-	PlayerInputComponent->BindAction("FireYellow",IE_Pressed, this, &ATestChamberCharacter::OnFire);
+	PlayerInputComponent->BindAction("FireBlue", IE_Pressed, this, &ATestChamberCharacter::OnFireBlue);
+	PlayerInputComponent->BindAction("FireYellow",IE_Pressed, this, &ATestChamberCharacter::OnFireYellow);
 
 	// Bind movement events
 	PlayerInputComponent->BindAxis("MoveForward", this, &ATestChamberCharacter::MoveForward);
@@ -108,54 +108,17 @@ void ATestChamberCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ATestChamberCharacter::LookUpAtRate);
 }
 
-void ATestChamberCharacter::OnFire()
+void ATestChamberCharacter::OnFireBlue()
+{	
+	bool BisBlue = true;
+	ShootPortal(BisBlue);
+	FireGun();
+}
+void ATestChamberCharacter::OnFireYellow()
 {
-	//ray trace on fire
-	FHitResult OutHit;
-	// FVector Start = FP_MuzzleLocation->GetComponentLocation();
-	FVector PlayerViewLocation;
-	FRotator PlayerViewRotation;
-	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerViewLocation,OUT PlayerViewRotation);
-	FVector Start = PlayerViewLocation;
-	// FVector ForwardVec = FirstPersonCameraComponent->GetForwardVector();
-	// FVector End = ((ForwardVec*10000.0f) + Start);
-	FVector End = Start + PlayerViewRotation.Vector() * 10000.0f;
-	FCollisionQueryParams CollisionParams;
-
-	DrawDebugLine(GetWorld(), Start, End, FColor::Magenta, true);
-	bool bHitSomething = GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams);
-
-	if (bHitSomething)
-	{
-		if (OutHit.bBlockingHit)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("You hit: %s"), *OutHit.GetActor()->GetName()));
-
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Impact Point: %s"), *OutHit.ImpactPoint.ToString()));
-
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Impact Normal: %s"), *OutHit.ImpactNormal.ToString()));
-
-		}
-		
-	}
-	
-
-	// try and play the sound if specified
-	if (FireSound != NULL)
-	{
-		// UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-	}
-
-	// try and play a firing animation if specified
-	if (FireAnimation != NULL)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
-		if (AnimInstance != NULL)
-		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
-	}
+	bool BisBlue = false;
+	ShootPortal(BisBlue);
+	FireGun();
 }
 
 void ATestChamberCharacter::MoveForward(float Value)
@@ -186,4 +149,89 @@ void ATestChamberCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
+}
+
+void ATestChamberCharacter::ShootPortal(bool BIsBluePortal)
+{
+	//ray trace on fire
+	FHitResult OutHit;
+	FVector PlayerViewLocation;
+	FRotator PlayerViewRotation;
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerViewLocation,OUT PlayerViewRotation);
+	FVector Start = PlayerViewLocation;
+	FVector End = Start + PlayerViewRotation.Vector() * 10000.0f;
+	FCollisionQueryParams CollisionParams;
+
+	//when we hit something
+	bool bHitSomething = GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams);
+
+	if (bHitSomething)
+	{
+		if (OutHit.bBlockingHit)
+		{
+			if (BIsBluePortal)
+			{
+				SpawnBluePortal(OutHit.ImpactPoint + OutHit.ImpactNormal*0.01f, OutHit.ImpactNormal);
+			}
+			else
+			{
+				SpawnYellowPortal(OutHit.ImpactPoint + OutHit.ImpactNormal*0.01f, OutHit.ImpactNormal);
+			}
+		}
+	}
+}
+
+void ATestChamberCharacter::SpawnBluePortal(FVector position, FVector hitNormal)
+{
+	if (BluePortal_BP)
+	{
+		FActorSpawnParameters SpawnParams;
+		FRotator Rotation = hitNormal.Rotation();
+
+		if(BluePTL)
+		{
+			BluePTL->Destroy();
+		}
+		BluePTL = GetWorld()->SpawnActor<AActor>(BluePortal_BP, position, Rotation, SpawnParams);
+	}
+	
+}
+
+
+
+void ATestChamberCharacter::SpawnYellowPortal(FVector position, FVector hitNormal)
+{
+	if (YellowPortal_BP)
+	{
+		FActorSpawnParameters SpawnParams;
+		FRotator Rotation = hitNormal.Rotation();
+
+		if (YellowPTL)
+		{
+			YellowPTL->Destroy();
+		}
+		
+		YellowPTL = GetWorld()->SpawnActor<AActor>(YellowPortal_BP, position, Rotation, SpawnParams);
+	}
+	
+}
+
+void ATestChamberCharacter::FireGun()
+{
+	// try and play the sound if specified
+	if (FireSound != NULL)
+	{
+		// UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+	}
+
+	// try and play a firing animation if specified
+	if (FireAnimation != NULL)
+	{
+		// Get the animation object for the arms mesh
+		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
+		if (AnimInstance != NULL)
+		{
+			AnimInstance->Montage_Play(FireAnimation, 1.f);
+		}
+	}
 }
