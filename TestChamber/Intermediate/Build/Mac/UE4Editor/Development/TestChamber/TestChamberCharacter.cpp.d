@@ -2485,4 +2485,8 @@
   /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/HeadMountedDisplay/MotionControllerComponent.generated.h \
   /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/HeadMountedDisplay/Public/XRMotionControllerBase.h \
   /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Public/DrawDebugHelpers.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Classes/Components/SceneCaptureComponent2D.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Source/Runtime/Engine/Classes/Components/SceneCaptureComponent.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/SceneCaptureComponent.generated.h \
+  /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/SceneCaptureComponent2D.generated.h \
   /Users/Shared/Epic\ Games/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/GameEngine.generated.h

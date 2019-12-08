@@ -13,6 +13,7 @@
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
 #include "DrawDebugHelpers.h"
 #include "Engine/World.h"
+#include "Components/SceneCaptureComponent2D.h"
 #include "GameEngine.generated.h"
 
 #define OUT
@@ -110,15 +111,11 @@ void ATestChamberCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 void ATestChamberCharacter::OnFireBlue()
 {	
-	bool BisBlue = true;
-	ShootPortal(BisBlue);
-	FireGun();
+	//Handled in Portal Manager
 }
 void ATestChamberCharacter::OnFireYellow()
 {
-	bool BisBlue = false;
-	ShootPortal(BisBlue);
-	FireGun();
+	//Handled in Portal Manager
 }
 
 void ATestChamberCharacter::MoveForward(float Value)
@@ -151,77 +148,12 @@ void ATestChamberCharacter::LookUpAtRate(float Rate)
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-void ATestChamberCharacter::ShootPortal(bool BIsBluePortal)
-{
-	//ray trace on fire
-	FHitResult OutHit;
-	FVector PlayerViewLocation;
-	FRotator PlayerViewRotation;
-	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerViewLocation,OUT PlayerViewRotation);
-	FVector Start = PlayerViewLocation;
-	FVector End = Start + PlayerViewRotation.Vector() * 10000.0f;
-	FCollisionQueryParams CollisionParams;
-
-	//when we hit something
-	bool bHitSomething = GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams);
-
-	if (bHitSomething)
-	{
-		if (OutHit.bBlockingHit)
-		{
-			if (BIsBluePortal)
-			{
-				SpawnBluePortal(OutHit.ImpactPoint + OutHit.ImpactNormal*0.01f, OutHit.ImpactNormal);
-			}
-			else
-			{
-				SpawnYellowPortal(OutHit.ImpactPoint + OutHit.ImpactNormal*0.01f, OutHit.ImpactNormal);
-			}
-		}
-	}
-}
-
-void ATestChamberCharacter::SpawnBluePortal(FVector position, FVector hitNormal)
-{
-	if (BluePortal_BP)
-	{
-		FActorSpawnParameters SpawnParams;
-		FRotator Rotation = hitNormal.Rotation();
-
-		if(BluePTL)
-		{
-			BluePTL->Destroy();
-		}
-		BluePTL = GetWorld()->SpawnActor<AActor>(BluePortal_BP, position, Rotation, SpawnParams);
-	}
-	
-}
-
-
-
-void ATestChamberCharacter::SpawnYellowPortal(FVector position, FVector hitNormal)
-{
-	if (YellowPortal_BP)
-	{
-		FActorSpawnParameters SpawnParams;
-		FRotator Rotation = hitNormal.Rotation();
-
-		if (YellowPTL)
-		{
-			YellowPTL->Destroy();
-		}
-		
-		YellowPTL = GetWorld()->SpawnActor<AActor>(YellowPortal_BP, position, Rotation, SpawnParams);
-	}
-	
-}
-
 void ATestChamberCharacter::FireGun()
 {
 	// try and play the sound if specified
 	if (FireSound != NULL)
 	{
-		// UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 	}
 
 	// try and play a firing animation if specified

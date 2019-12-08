@@ -61,12 +61,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	class UAnimMontage* FireAnimation;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Portal)
-	TSubclassOf<AActor> BluePortal_BP;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Portal)
-	TSubclassOf<AActor> YellowPortal_BP;
-
 protected:
 	
 	/** Fires a Blue Portal. */
@@ -104,15 +98,8 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
-private:
-	void SpawnBluePortal(FVector position, FVector hitNormal);
-	void SpawnYellowPortal(FVector position, FVector hitNormal);
-
+	UFUNCTION(BlueprintCallable, Category = Portals)
 	void FireGun();
-	void ShootPortal(bool BIsBluePortal);
-
-	AActor* BluePTL;
-	AActor* YellowPTL;
 
 };
 

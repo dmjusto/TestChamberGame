@@ -2,6 +2,10 @@
 
 
 #include "Portal.h"
+#include "GameFramework/PlayerController.h"
+#include "GameFramework/Actor.h"
+#include "Engine/World.h"
+
 
 // Sets default values for this component's properties
 UPortal::UPortal()
@@ -18,9 +22,6 @@ UPortal::UPortal()
 void UPortal::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
 
@@ -28,8 +29,5 @@ void UPortal::BeginPlay()
 void UPortal::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-	//testing...
 }
 
