@@ -3,6 +3,11 @@
 
 #include "PortalManager.h"
 #include "Animation/AnimInstance.h"
+#include "GameFramework/Controller.h"
+#include "DrawDebugHelpers.h"
+#include <cmath>
+#include "Math/Vector.h"
+#include "Math/Quat.h"
 #include "Engine/World.h"
 
 // Sets default values for this component's properties
@@ -29,7 +34,7 @@ void UPortalManager::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+	UpdatePortalCams();
 }
 
 
@@ -115,22 +120,66 @@ void UPortalManager::SpawnYellowPortal(FVector position, FVector hitNormal)
 	
 }
 
-// void ATestChamberCharacter::UpdatePortalCams()
-// {
-// 	if(BluePTL && YellowPTL)
-// 	{
-// 		//get the vector pointing from the blue portal to the player
-// 		FVector BluePortalPos = BluePTL->GetActorLocation();
-// 		FVector PlayerPos = GetOwner()->GetActorLocation();
-// 		FVector BlueToPlayerVec = BluePortalPos - PlayerPos;
+void UPortalManager::UpdatePortalCams()
+{
+	if(BluePTL && YellowPTL)
+	{
+		//Get Portal Cameras
+		BlueCam = BluePTL->FindComponentByClass<USceneCaptureComponent2D>();
+		YellowCam = YellowPTL->FindComponentByClass<USceneCaptureComponent2D>();
 
-// 		FRotator NewYellowCamRot = BlueToPlayerVec.Rotation();
+		FVector NewYellowPos = GetNewCamPos(BluePTL, YellowCam, YellowPTL);
+		FVector NewBluePos = GetNewCamPos(YellowPTL, BlueCam, BluePTL);
 
-// 		//get the camera on the yellow portal
-// 		class USceneCaptureComponent2D* YellowCam = YellowPTL->GetOwner()->FindComponentByClass<USceneCaptureComponent2D>();
+		FHitResult* HitResult;
 
-// 		//Update Yellow camera rotation
-// 		FHitResult HitResult;
-// 		YellowCam->K2_SetRelativeRotation(NewYellowCamRot,true,HitResult,true);
-// 	}
-// }
+		//Update Portal camera positions
+		BlueCam->SetWorldLocation(NewBluePos);
+		BlueCam->SetWorldRotation(GetNewCamRot(BluePTL, YellowPTL));
+		YellowCam->SetWorldLocation(NewYellowPos);
+
+		YellowCam->SetWorldRotation(GetNewCamRot(YellowPTL, BluePTL));
+	}
+}
+
+FVector UPortalManager::GetNewCamPos(AActor* Portal, USceneCaptureComponent2D* PortalCam, AActor* OtherPortal)
+{
+	//get player position this frame
+	FVector PlayerViewLocation;
+	FRotator PlayerViewRotation;
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerViewLocation,OUT PlayerViewRotation);
+	FVector PlayerPos = PlayerViewLocation;
+
+	//get vector from portal to player
+	FVector PlayerToPortal = PlayerPos - Portal->GetActorLocation();
+	// FVector PlayerToPortal = Portal->GetActorLocation() - PlayerPos;
+
+	//translate vector from world to local space
+	FVector D_Product;
+	D_Product.X = FVector::DotProduct(PlayerToPortal, Portal->GetActorForwardVector());
+	D_Product.Y = FVector::DotProduct(PlayerToPortal, Portal->GetActorRightVector());
+	D_Product.Z = FVector::DotProduct(PlayerToPortal, Portal->GetActorUpVector());
+
+	// FVector NewDirection = D_Product.X * OtherPortal->GetActorForwardVector()
+	// 					 + D_Product.Y * OtherPortal->GetActorRightVector()
+	// 					 + D_Product.Z * OtherPortal->GetActorUpVector();
+
+	FVector NewDirection = D_Product.Y * OtherPortal->GetActorRightVector()
+						 + D_Product.Z * OtherPortal->GetActorUpVector();
+						 
+
+	return OtherPortal->GetActorLocation() + NewDirection;
+	// return NewDirection;
+}
+
+FQuat UPortalManager::GetNewCamRot(AActor* Portal, AActor* OtherPortal)
+{
+	FTransform PortalTrans = Portal->GetActorTransform();
+	FTransform OtherPortalTrans = OtherPortal->GetActorTransform();
+	FTransform PlayerTrans = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorTransform();
+
+	FQuat LocalQuat = PortalTrans.GetRotation().Inverse() * PlayerTrans.GetRotation();
+	FQuat NewWorldQuat = OtherPortalTrans.GetRotation() * LocalQuat;
+
+	return NewWorldQuat;
+}

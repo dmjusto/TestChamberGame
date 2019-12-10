@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Components/SceneCaptureComponent2D.h"
 #include "PortalManager.generated.h"
 
 
@@ -46,9 +47,15 @@ private:
 	
 
 	void UpdatePortalCams();
+	FVector GetNewCamPos(AActor* Portal, USceneCaptureComponent2D* PortalCam, AActor* OtherPortal);
+	FQuat GetNewCamRot(AActor* Portal, AActor* OtherPortal);
 
+	//references to the spawned portals
 	AActor* BluePTL;
 	AActor* YellowPTL;
 
+	//references to the portal cameras
+	USceneCaptureComponent2D* YellowCam = nullptr;
+	USceneCaptureComponent2D* BlueCam = nullptr;
 		
 };
