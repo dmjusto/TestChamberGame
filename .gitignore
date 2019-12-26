@@ -3,7 +3,8 @@
 */DerivedDataCache
 */Intermediate
 */Saved
-BuildingEscape/Content/StarterContent/
+TestChamber_BP/Content/StarterContent/
+TestChamber_BP/Content/ModSciInteriors/
 
 #visual studio code files
 .vscode/*
@@ -93,3 +94,5 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 TestChamber/cmake-build-debug
 CMakeLists.txt
+TestChamber_BP/Content/ModSci_Engineer
+TestChamber_BP/Content/ModSci_EngiProps
